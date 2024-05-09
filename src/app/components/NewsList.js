@@ -15,9 +15,9 @@ const NewsList = () => {
           "https://newsapi.org/v2/top-headlines?country=kr&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea",
           {
             headers: {
-              "Accept-Encoding": "deflate, br",
-              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+              "Content-Type": "application/json; charset=utf-8",
             },
+            responseType: "json", // JSON 형식으로 응답 받기
           }
         );
         setArticles(response.data.articles);
@@ -30,7 +30,7 @@ const NewsList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-[20px]">
       {articles &&
         articles.map((article) => (
           <NewsItmes key={article.url} article={article} />

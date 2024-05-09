@@ -21,8 +21,8 @@ const NewsItmes = ({ article }) => {
             </a>
           </div>
         )}
-        <div className="content">
-          <h2 className="content-title font-bold text-xl">
+        <div className="content flex flex-col gap-y-[10px]">
+          <h2 className="content-title font-bold text-xl pt-[15px]">
             <a href={url} target="_blank">
               {title}
             </a>
