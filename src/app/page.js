@@ -1,35 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import axios from "axios";
+import NewsList from "./components/NewsList";
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const onClick = async () => {
-    try {
-      const response = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=kr&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea"
-      );
-      setData(response.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   return (
-    <div>
-      <div>
-        <button onClick={onClick}>불러오기</button>
-      </div>
-      {data && (
-        <textarea
-          rows={7}
-          cols={30}
-          value={JSON.stringify(data, null, 2)}
-          readOnly={true}
-        />
-      )}
+    <div className="site-wrap">
+      <header className="navbar bg-base-100">
+        <a className="btn btn-ghost text-xl">daisyUI</a>
+      </header>
+      <NewsList />
     </div>
   );
 };
+
 export default App;
