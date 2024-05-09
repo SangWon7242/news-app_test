@@ -29,12 +29,16 @@ const categories = [
   },
 ];
 
-const Categories = () => {
+const Categories = ({ category, onSelect }) => {
   return (
     <nav className="ml-auto pr-[20px]">
       <ul className="flex">
         {categories.map((c) => (
-          <li key={c.name} className="px-[20px] hover:underline cursor-pointer">
+          <li
+            key={c.name}
+            className="px-[20px] hover:underline hover:text-[#22b8cf] cursor-pointer"
+            onClick={() => onSelect(c.name)}
+          >
             {c.text}
           </li>
         ))}
