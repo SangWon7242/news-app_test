@@ -4,20 +4,24 @@ const NewsItmes = ({ article }) => {
   const { title, description, url, urlToImage } = article;
 
   return (
-    <section className="news-items-box">
+    <div className="news-items-box mt-[10px]">
       <div className="con mx-auto max-w-[1200px] flex border-2 gap-x-2">
         {urlToImage && (
-          <div className="thumbnail w-[200px] bg-red-300 flex-shrink-0">
-            <a
-              href={url}
-              target="_blank"
-              className="flex w-full h-[160px] bg-blue-300"
-            >
-              <img
-                src={urlToImage}
-                alt="thumbnail"
-                className="block w-full h-full object-cover"
-              />
+          <div className="thumbnail w-[200px] flex-shrink-0">
+            <a href={url} target="_blank" className="flex w-full h-[160px]">
+              {urlToImage ? (
+                <img
+                  src={urlToImage}
+                  alt="thumbnail"
+                  className="block w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = "https://via.placeholder.com/150";
+                    e.target.alt = "이미지 로딩 실패";
+                  }}
+                />
+              ) : (
+                <span>이미지없음</span>
+              )}
             </a>
           </div>
         )}
@@ -30,7 +34,7 @@ const NewsItmes = ({ article }) => {
           <p>{description}</p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

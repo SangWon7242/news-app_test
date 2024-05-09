@@ -13,10 +13,10 @@ const NewsList = ({ category }) => {
       try {
         const query = category === "all" ? "" : `&category=${category}`;
 
-        console.log(`query : ${query}`);
+        const pageSize = 100;
 
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea`,
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&pageSize=${pageSize}&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea`,
           {
             headers: {
               "Content-Type": "application/json; charset=utf-8",

@@ -11,10 +11,13 @@ const App = () => {
   return (
     <div className="site-wrap">
       <header className="navbar bg-base-100 shadow-md">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">방구석코딩 뉴스</a>
         <Categories category={category} onSelect={onSelect} />
       </header>
       <NewsList category={category} />
+      <footer className="footer flex items-center justify-center min-h-[80px] p-4 bg-neutral text-neutral-content">
+        <p className="text-[1.5rem]">ⓒ, "Copyright", "All right reserved"</p>
+      </footer>
     </div>
   );
 };
