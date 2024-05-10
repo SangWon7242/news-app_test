@@ -16,7 +16,7 @@ const App = () => {
       </header>
       <NewsList category={category} />
       <footer className="footer flex items-center justify-center min-h-[80px] p-4 bg-neutral text-neutral-content">
-        <p className="text-[1.5rem]">ⓒ, "Copyright", "All right reserved"</p>
+        <p className="text-[1.5rem]">ⓒ, Copyright, All right reserved</p>
       </footer>
     </div>
   );
