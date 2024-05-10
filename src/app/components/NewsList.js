@@ -3,6 +3,8 @@ import axios from "axios";
 import NewsItmes from "./NewsItems";
 
 const NewsList = ({ category }) => {
+  const SECRET_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -16,7 +18,7 @@ const NewsList = ({ category }) => {
         const pageSize = 100;
 
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr${query}&pageSize=${pageSize}&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea`,
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&pageSize=${pageSize}&apiKey=${SECRET_KEY}`,
           {
             headers: {
               "Content-Type": "application/json; charset=utf-8",
