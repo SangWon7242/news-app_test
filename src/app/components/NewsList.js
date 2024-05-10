@@ -8,8 +8,6 @@ const NewsList = ({ category }) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  console.log(`SECRET_KEY : ${SECRET_KEY}`);
-
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
     const fetchData = async () => {
