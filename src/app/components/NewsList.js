@@ -18,7 +18,7 @@ const NewsList = ({ category }) => {
         const pageSize = 100;
 
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr${query}&pageSize=${pageSize}&apiKey=${SECRET_KEY}`,
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&pageSize=${pageSize}&apiKey=4b9d1c190bc4462d9445df3d6cddc1ea`,
           {
             headers: {
               "Content-Type": "application/json; charset=utf-8",
