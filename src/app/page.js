@@ -11,7 +11,9 @@ const App = () => {
   return (
     <div className="site-wrap">
       <header className="navbar bg-base-100 shadow-md">
-        <a className="btn btn-ghost text-xl">방구석코딩 뉴스</a>
+        <a href="/" className="btn btn-ghost text-xl">
+          방구석코딩 뉴스
+        </a>
         <Categories category={category} onSelect={onSelect} />
       </header>
       <NewsList category={category} />

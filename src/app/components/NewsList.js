@@ -3,10 +3,12 @@ import axios from "axios";
 import NewsItmes from "./NewsItems";
 
 const NewsList = ({ category }) => {
-  const SECRET_KEY = process.env.NEXT_PUBLIC_API_KEY;
+  const SECRET_KEY = process.env.NEXT_PUBLIC_API_MAIN_KEY;
 
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  console.log(`SECRET_KEY : ${SECRET_KEY}`);
 
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
